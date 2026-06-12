@@ -1,3 +1,4 @@
+
 # NA-PCManager64
 
 A flexible software that allows you to control your PC remotely via a local server on your PC using any other connected device to the same Wi-Fi as your PC.
@@ -46,11 +47,17 @@ Then you can use it as an ordinary exe program.
 <br>
 Note that this works for `Windows 10+ 64-bit`.
 
+<img width="297" height="83" alt="files" src="https://github.com/user-attachments/assets/bba3c3e9-84a0-407d-8279-a159653e2e4a" />
+
 ## Version
 - Current version: 1.7.0
 
 ## Software's User interface
 When you open the software, you are going to see this interface:
+
+<img width="271" height="130" alt="serverclosed" src="https://github.com/user-attachments/assets/e94602fc-8c18-4646-b0b3-93d575355feb" />
+
+<img width="271" height="130" alt="serverrunning" src="https://github.com/user-attachments/assets/52f6c97f-6efa-40c5-9d5f-dbd3e6f68cfc" />
 
 - On top, there is a **server status** text label, it tells you whether the server is running or not and also shows you the URL of the web-application.
 - Then, there is a section where it shows you 4 options:
@@ -68,10 +75,18 @@ When you open the software, you are going to see this interface:
 4. **Open website**, clicking this button will open the web-application automatically for you.
 5. **Open server outputs**, clicking this button will open a new window where it shows you the server outputs.
 
+<img width="960" height="519" alt="outputs" src="https://github.com/user-attachments/assets/8bc93065-ab5d-474e-92ba-8c478e9f6c00" />
+
 - Then, in the bottom section, There is a status text label that tells you what is happening right now in terms of fetching server status or saving changes, etc.
 
 ## Web-Application's user interface
 When you open the web-application, you are going to encounter this interface:
+
+<img width="958" height="362" alt="webinterface1" src="https://github.com/user-attachments/assets/c4b34b10-2384-401b-83d0-05332d87bf23" />
+
+<img width="960" height="282" alt="webinterface2" src="https://github.com/user-attachments/assets/fecfbd7b-8aac-4a2f-acec-ca4054c6a645" />
+
+<img width="960" height="414" alt="web interface3" src="https://github.com/user-attachments/assets/c0639708-3eb2-43c2-8f3c-c7f004049f2c" />
 
 - First thing you see when you open the web-application is an entry that asks you for the server access key, you need to enter the right access key in order to continue.
 - Then - if you entered the right access key - you will see a bunch of boxes, every box has its own function, you will see also your PC's username at the top.
