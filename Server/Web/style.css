@@ -1,0 +1,158 @@
+body{
+    font-family: sans-serif;
+    zoom: 0.7;
+}
+
+h2{
+   margin-top: 2px;
+}
+
+h3{
+   margin-top: 2px;
+}
+
+.allnormdiv{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.normdiv{
+    border-radius: 10px;
+    background-color: rgb(26, 25, 25);
+    text-align: center;
+    height: fit-content;
+    width: 60vh;
+    color: white;
+    margin: 8px;
+}
+
+
+.normdiv img{
+  margin: 12px;
+}
+
+.normdivbig{
+    border-radius: 10px;
+    background-color: rgb(26, 25, 25);
+    text-align: center;
+    height: 70vh;
+    width: 95vh;
+    color: white;
+    margin: 8px;
+}
+
+.normdivbig2{
+    border-radius: 10px;
+    background-color: rgb(26, 25, 25);
+    text-align: center;
+    height: 120vh;
+    width: 95vh;
+    color: white;
+    margin: 8px;
+}
+
+.normdivbig textarea{
+  resize: none;
+}
+
+button{
+  width: 200px;
+  height: 50px;
+  border-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  color: white;
+  background-color: #333;
+  pointer-events: painted;  
+  margin: 6px;
+}
+
+.key{
+    border-radius: 10px;
+    background-color: rgb(26, 25, 25);
+    text-align: center;
+    height: fit-content;
+    color: white;
+    margin: 8px;
+}
+
+.key h2{
+  margin: 6px;
+}
+
+.inputkey{
+  width: 170px;
+  border-radius: 15px;
+  pointer-events: auto;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  background-color: white;
+  height: 15px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  color: black;
+  margin: 6px;
+}
+
+.inputkey2{
+  width: 80%;
+  border-radius: 15px;
+  pointer-events: auto;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  background-color: white;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  color: black;
+  margin: 6px;
+}
+
+.inputkey3{
+  width: 170px;
+  border-radius: 15px;
+  pointer-events: auto;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  background-color: black;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  color: black;
+  margin: 6px;
+}
+
+.lastShot{
+  border-radius: 8px;
+  height: 30vh;
+  width: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.all{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px){
+  *{
+    transform: scale(0.92);
+    transform-origin: center top;
+  }
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NA-PCManager64</title>
+    <link rel="stylesheet" href="/Web/style.css">
+</head>
+<body>
+    <center>
+    <h2>This is a Remote PC manager for windows</h2> <h2 id="usrname" style="opacity: 0;">Username: None...</h2>
+
+    <div class="allnormdiv">
+
+    <div class="key">
+    <br>
+    <h2>Enter manage key</h2>
+    <input type="password" id="key" class="inputkey" placeholder="Key..." required>
+    </div>
+
+    <div id="all" style="opacity: 0;" class="all">
+
+    <div class="normdiv">
+        <br>
+        <h2>System info</h2>
+        <textarea id="sysinfoText" style="color: green; width: 80%;" class="inputkey3" rows="8" readonly>None...</textarea>
+    </div>
+
+    
+    <div class="normdiv">
+        <br>
+        <h2>CPU info</h2>
+        <textarea id="cpuinfoTex46t" style="color: green; width: 80%;" class="inputkey3" rows="8" readonly>None...</textarea>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>GPU info</h2>
+        <textarea id="gpuinfote24xt" style="color: green; width: 80%;" class="inputkey3" rows="8" readonly>None...</textarea>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Disks info</h2>
+        <textarea id="disksin25fotext" style="color: green; width: 80%;" class="inputkey3" rows="8" readonly>None...</textarea>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Drivers info</h2>
+        <textarea id="driversina42ffotext" style="color: green; width: 80%;" class="inputkey3" rows="8" readonly>None...</textarea>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Opened apps</h2>
+        <textarea id="open35edapps" style="color: green; width: 80%;" class="inputkey3" rows="8" readonly>None...</textarea>
+    </div>
+
+    <div class="normdiv" style="width: 60vh;">
+        <br>
+        <h2>Resources Monitor</h2>
+        <textarea id="reesMonitor" style="color: green; width: 80%;" class="inputkey3" rows="10" readonly>None...</textarea>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Shutdown PC</h2>
+        <button onclick="sendRequest('shutdownpc')">Shutdown now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Restart PC</h2>
+        <button onclick="sendRequest('restartpc')">Restart now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Sleep PC</h2>
+        <button onclick="sendRequest('sleeppc')">Sleep now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Sign out PC</h2>
+        <button onclick="sendRequest('signoutpc')">Sign out now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Close all apps</h2>
+        <button onclick="sendRequest('closeallapps')">Close apps now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Play the standard beep of Windows</h2>
+        <button onclick="sendRequest('playbeeb')">Play it now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Request a screenshot</h2>
+        <img alt="Last screen shot" id="lastShot" class="lastShot"></img>
+        <br>
+        <button onclick="reqScreenShot()">Request screenshot now</button>
+        <br>
+        <button onclick="refreshImag('lastShot')">Refresh image now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Speak a text</h2>
+        <textarea class="inputkey2" id="texttospeak" rows="4" placeholder="Enter a message..."></textarea>
+        <br>
+        <button onclick="speakText()">Speak now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Send a message</h2>
+        <textarea class="inputkey2" id="message" rows="4" placeholder="Enter a message..."></textarea>
+        <br>
+        <button onclick="sendMessage()">Send message now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Send an error</h2>
+        <textarea class="inputkey2" style="color: red;" id="error" rows="4" placeholder="Enter an error message..."></textarea>
+        <br>
+        <button onclick="sendError()">Send error now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Run a file</h2>
+        <textarea type="text" id="progpath" class="inputkey2" placeholder="Enter a path..." rows="4"></textarea>
+        <br>
+        <button onclick="runProg()">Run now</button>
+    </div>
+
+    <div class="normdiv">
+        <br>
+        <h2>Download a file</h2>
+        <textarea type="text" id="filePath" class="inputkey2" placeholder="Enter a path..." rows="4"></textarea>
+        <br>
+        <button onclick="downloadafile()">Download now</button>
+    </div>
+
+    <div class="normdivbig2">
+        <br>
+        <h2>File Explorer</h2>
+        <textarea id="expl325" style="color: green; width: 80%; height: 65%;" class="inputkey3"  readonly>None...</textarea>
+        <br>
+        <textarea type="text" id="cdpath" class="inputkey2" placeholder="Enter a path..." rows="4"></textarea>
+        <br>
+        <button onclick="getDataFromPath()">Go to</button>
+    </div>
+    <br>
+    <div class="normdivbig">
+        <br>
+        <h2>Server Outputs</h2>
+        <textarea id="seroutputs34" style="color: green; width: 80%; height: 65%;" class="inputkey3"  readonly>None...</textarea>
+        <br>
+        <button onclick="sendRequest('restartserver')">Restart The Server</button>
+    </div>
+
+</div>
+    <h4>
+        - Some notes -
+        <br>
+        Typing *0* in file explorer text box will make the server read it as %20
+        <br>
+        Typing *0* in download a file text box will make the server read it as %20
+        <br>
+        Typing *0* in run a file text box will make the server read it as %20
+        <br>
+        Typing *032856252659660* in send an error text Box will make the server read it as %20
+        <br>
+        Typing *032856252659660* in speak a text text box will make the server read it as %20
+        <br>
+        Typing *032856252659660* in send a message text box will make the server read it as %20      
+        <br>
+        To conserve system resources, please avoid keeping this server page open unnecessarily
+        <br>
+        Performance and speed depend on your computer's capabilities and your local network strength
+    </h4>
+ </div>
+   </center>
+    <form method="POST" action="http://localhost:3000/downloadfile-E:/Palestine.jpeg-admin" style="display: none;" id="pathDownload">
+        <input type="submit" value="Download" id="downloadButon">
+    </form>
+    <script>
+        let isSendingError = false
+        let isReqShot = false
+        let isItReqEd = false
+
+
+        function sendRequest(reqName){
+            let manageKey = document.getElementById("key").value
+
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+
+           fetch(`/${reqName}-${manageKey}`)
+           .then(res => res.text());   
+        }
+
+        function sendMessage(){
+            let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+
+            let msg = document.getElementById("message").value.replaceAll("%20", "*032856252659660*")
+
+            if (msg.replaceAll(" ", "") !== ""){
+           fetch(`/sendmessage-${msg}-${manageKey}`)
+           .then(res => res.text()); 
+            }
+        }
+
+            function speakText(){
+            let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+
+            let text = document.getElementById("texttospeak").value.replaceAll("%20", "*032856252659660*");
+
+            setTimeout(() => {
+            if (text.replaceAll(" ", "") !== ""){
+           fetch(`/speaktext-${text}-${manageKey}`)
+           .then(res => res.text()); 
+        }
+        }, 500);
+        }
+
+        function runProg(){
+            let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+
+            let progPath = document.getElementById("progpath").value.replaceAll("%20", "*0*");
+
+             setTimeout(() => {
+            if (progPath.replaceAll(" ", "") !== ""){
+           fetch(`/runprogram-${progPath}-${manageKey}`)
+           .then(res => res.text()); 
+            }
+             }, 900);
+        }
+
+            function downloadafile(){
+            let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+            let filePath = document.getElementById("filePath").value
+
+             setTimeout(() => {
+            if (filePath.replaceAll(" ", "") !== ""){
+            document.getElementById("pathDownload").action = `/downloadfile-${manageKey}-${filePath.replaceAll("%20", "*0*")}`;
+            document.getElementById("downloadButon").click();
+        }
+        }, 900);
+        }
+
+        function reqScreenShot(){
+            if (isReqShot == false){
+                isReqShot = true
+           let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+            fetch(`/reqscreenshot-${manageKey}`).then(res => res.text()).then(srcPath => {
+                document.getElementById("lastShot").src = srcPath;
+            }); 
+
+            setTimeout(() => {
+            isReqShot = false
+            }, 900);
+            }
+        }
+
+        function refreshImag(imgId){
+            document.getElementById(imgId).src = document.getElementById(imgId).src + "?r=" + Date.now();
+        }
+
+        function sendError(){
+            if (isSendingError == false){
+                isSendingError = true
+            let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+
+            let err = document.getElementById("error").value.replaceAll("%20", "*032856252659660*")
+            
+            if (err.replaceAll(" ", "") !== ""){
+           fetch(`/senderror-${err}-${manageKey}`)
+           .then(res => res.text()); 
+            }
+            
+            setTimeout(() => {
+            isSendingError = false
+            }, 500);
+            }
+        }
+
+        let timeOut = 2000
+
+        function getDataFromPath(){
+            let manageKey = document.getElementById("key").value
+            if (manageKey.includes(".png")){
+                manageKey = manageKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                manageKey = manageKey.replaceAll("-", "%&%2%");
+            }
+
+            let path = document.getElementById("cdpath").value.replaceAll("%20", "*0*");
+
+            if (path.replaceAll(" ", "") !== ""){
+           fetch(`/expfls-${path}-${manageKey}`)
+           .then(res => res.text())
+           .then(res => document.getElementById("expl325").innerHTML = res);
+            }
+        }
+
+        const intervalId2 = setInterval(() => {
+            let curKey = document.getElementById("key").value;
+            if (curKey.includes(".png")){
+                curKey = curKey.replaceAll(".png", ".p&ng").replaceAll("-", "%&%2%");
+            }else{
+                curKey = curKey.replaceAll("-", "%&%2%");
+            }
+
+            fetch(`/reqkey-${curKey}`).then(res => res.text()).then(answer => {
+                if (answer === "Right"){
+                    document.getElementById("all").style.opacity = 1;
+                    document.getElementById("usrname").style.opacity = 1;
+
+                    if (isItReqEd == false){
+                        isItReqEd = true;
+                        reqScreenShot();
+                    }
+
+                } else {
+                    document.getElementById("all").style.opacity = 0;
+                    document.getElementById("usrname").style.opacity = 0;
+                }
+            });
+        }, timeOut - 500);
+
+        let lastServerOutput = "";
+        const intervalId3 = setInterval(() => {
+            fetch(`/getoutpus`).then(res => res.text()).then(answer => {
+               if (answer.replaceAll(" ", "").replaceAll("\n", "") !== lastServerOutput.replaceAll(" ", "").replaceAll("\n", "")){
+                lastServerOutput = answer;
+               document.getElementById("seroutputs34").innerHTML = answer;
+               document.getElementById("seroutputs34").scrollTop = document.getElementById("seroutputs34").scrollHeight;
+               }
+            });
+        }, timeOut - 400);
+
+        const intervalId4 = setInterval(() => {
+            fetch("/getResUsage").then(res => res.text()).then(res => document.getElementById("reesMonitor").innerHTML = res);
+            fetch("/openedapps").then(res => res.text()).then(res => document.getElementById("open35edapps").innerHTML = res);
+        }, timeOut - 600);
+
+        
+        let isItOffline = false;
+        setInterval(async () => {
+            try{
+            const response = await fetch("/health-check");
+                if (!response.ok){
+                  document.body.innerHTML = "<h2>The server is oflline!<h2>";
+                    isItOffline = true;
+                }else{
+                    if (isItOffline == true){
+                        isItOffline = false;
+                        window.location.reload();
+                    }
+                }       
+            } catch (err) {
+                document.body.innerHTML = "<h2>The server is oflline!<h2>";
+                isItOffline = true;
+            }
+        }, timeOut - 300);
+
+       document.getElementById("lastShot").onerror = function(err){
+            this.src = this.src;
+            console.log("Refreshing screenshot image...");
+        };
+
+        fetch("/requsrname").then(res => res.text()).then(res => document.getElementById("usrname").innerHTML = `PC Username: ${res}`);
+        fetch("/sysinfo").then(res => res.text()).then(res => document.getElementById("sysinfoText").innerHTML = res);
+        fetch("/cpuinfo").then(res => res.text()).then(res => document.getElementById("cpuinfoTex46t").innerHTML = res);
+        fetch("/gpuinfo").then(res => res.text()).then(res => document.getElementById("gpuinfote24xt").innerHTML = res);
+        fetch("/disksinfo").then(res => res.text()).then(res => document.getElementById("disksin25fotext").innerHTML = res);
+        fetch("/driversinfo").then(res => res.text()).then(res => document.getElementById("driversina42ffotext").innerHTML = res);
+        fetch("/1expfls").then(res => res.text()).then(res => document.getElementById("expl325").innerHTML = res);
+   </script>
+</body>
+</html>

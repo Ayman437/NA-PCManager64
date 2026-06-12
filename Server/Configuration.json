@@ -1,0 +1,12 @@
+{
+    "IsItOn": true,
+    "PORT": 3000,
+    "Key": "admin",
+    "LastShotPath": "E:/PyCharm Community Edition 2023.1.2/PycharmProjects/pythonProject/NA-PCManager64/Server/Web/LastScreenshot/",
+    "LastShotPath2": "Web/LastScreenshot/",
+    "ServerOutputsPath": "E:/PyCharm Community Edition 2023.1.2/PycharmProjects/pythonProject/NA-PCManager64/Server/ServerOutputs.txt",
+    "OtherServerRunnerScriptPath": "E:/PyCharm Community Edition 2023.1.2/PycharmProjects/pythonProject/NA-PCManager64/Server/StartPCManagerJSServer.vbs",
+    "OtherServerRunnerScriptPath2": "E:/PyCharm Community Edition 2023.1.2/PycharmProjects/pythonProject/NA-PCManager64/Server/StartPCManagerJSServer2.vbs",
+    "NircmdPath": "E:/PyCharm Community Edition 2023.1.2/PycharmProjects/pythonProject/NA-PCManager64/Server/Nircmdx64/nircmd.exe",
+    "ImageCompressionValue": "0.7"
+}
