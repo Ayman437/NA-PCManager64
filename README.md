@@ -47,7 +47,7 @@ Then you can use it as an ordinary exe program.
 <br>
 Note that this works for `Windows 10+ 64-bit`.
 
-<img width="297" height="83" alt="files" src="https://github.com/user-attachments/assets/bba3c3e9-84a0-407d-8279-a159653e2e4a" />
+<img width="594" height="166" alt="files" src="https://github.com/user-attachments/assets/bba3c3e9-84a0-407d-8279-a159653e2e4a" />
 
 ## Version
 - Current version: 1.7.0
@@ -55,9 +55,9 @@ Note that this works for `Windows 10+ 64-bit`.
 ## Software's User interface
 When you open the software, you are going to see this interface:
 
-<img width="271" height="130" alt="serverclosed" src="https://github.com/user-attachments/assets/e94602fc-8c18-4646-b0b3-93d575355feb" />
+<img width="542" height="260" alt="serverclosed" src="https://github.com/user-attachments/assets/e94602fc-8c18-4646-b0b3-93d575355feb" />
 
-<img width="271" height="130" alt="serverrunning" src="https://github.com/user-attachments/assets/52f6c97f-6efa-40c5-9d5f-dbd3e6f68cfc" />
+<img width="542" height="260" alt="serverrunning" src="https://github.com/user-attachments/assets/52f6c97f-6efa-40c5-9d5f-dbd3e6f68cfc" />
 
 - On top, there is a **server status** text label, it tells you whether the server is running or not and also shows you the URL of the web-application.
 - Then, there is a section where it shows you 4 options:
