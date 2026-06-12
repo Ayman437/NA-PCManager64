@@ -1,4 +1,3 @@
-
 # NA-PCManager64
 
 A flexible software that allows you to control your PC remotely via a local server on your PC using any other connected device to the same Wi-Fi as your PC.
@@ -82,11 +81,11 @@ When you open the software, you are going to see this interface:
 ## Web-Application's user interface
 When you open the web-application, you are going to encounter this interface:
 
-<img width="958" height="362" alt="webinterface1" src="https://github.com/user-attachments/assets/c4b34b10-2384-401b-83d0-05332d87bf23" />
+<img width="960" height="282" alt="webinterface2" src="https://github.com/user-attachments/assets/d907a4ae-0bea-4adb-a1c0-595da6029245" />
 
-<img width="960" height="282" alt="webinterface2" src="https://github.com/user-attachments/assets/fecfbd7b-8aac-4a2f-acec-ca4054c6a645" />
+<img width="960" height="414" alt="web interface3" src="https://github.com/user-attachments/assets/bf25d720-d7d7-4ebf-999c-38bbcba4e233" />
 
-<img width="960" height="414" alt="web interface3" src="https://github.com/user-attachments/assets/c0639708-3eb2-43c2-8f3c-c7f004049f2c" />
+<img width="958" height="362" alt="webinterface1" src="https://github.com/user-attachments/assets/b72d1215-71cd-4472-ad6c-0856546cbf9a" />
 
 - First thing you see when you open the web-application is an entry that asks you for the server access key, you need to enter the right access key in order to continue.
 - Then - if you entered the right access key - you will see a bunch of boxes, every box has its own function, you will see also your PC's username at the top.
