@@ -110,7 +110,7 @@ When you open the web-application, you are going to encounter this interface:
 - Please contact me [ clulyf88@gmail.com ] if you face any problem with the program, so I can fix it -
 
 ## Some information for developers on GitHub
-- This project is written in `NodeJs` 'for the server', `VBS` for starting server command,  `Python` 'for the program', `Javascript` 'for handling web-application interactions and sending data', `HTML` 'for main web-application interface', `CSS` 'for web-application user interface styling'.
+- This project is written in `NodeJs` 'for the server', `VBS` 'for starting server command',  `Python` 'for the program', `Javascript` 'for handling web-application interactions and sending data', `HTML` 'for main web-application interface', `CSS` 'for web-application user interface styling'.
 - This project uses **NirCmd command-line utility by NirSoft**.
 - Libraries used in Python:
 
