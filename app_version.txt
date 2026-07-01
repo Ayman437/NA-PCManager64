@@ -5,8 +5,8 @@
 #
 VSVersionInfo(
     ffi=FixedFileInfo(
-        filevers=(1, 7, 0, 0),
-        prodvers=(1, 7, 0, 0),
+        filevers=(1, 7, 2, 0),
+        prodvers=(1, 7, 2, 0),
         mask=0x3f,
         flags=0x0,
         OS=0x4,
@@ -20,11 +20,11 @@ VSVersionInfo(
             StringTable(
                 '040904B0',
                 [StringStruct('FileDescription', 'PC Manager for windows 64-bit'),
-                StringStruct('FileVersion', '1.7.0'),
+                StringStruct('FileVersion', '1.7.2'),
                 StringStruct('InternalName', 'NA-PCManager64'),
                 StringStruct('OriginalFilename', 'NA-PCManager64.exe'),
                 StringStruct('ProductName', 'NA-PCManager64'),
-                StringStruct('ProductVersion', '1.7.0')])
+                StringStruct('ProductVersion', '1.7.2')])
             ]), 
         VarFileInfo([VarStruct('Translation', [1033, 1200])])
     ]

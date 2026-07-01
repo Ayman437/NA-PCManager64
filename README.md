@@ -49,7 +49,7 @@ Note that this works for `Windows 10+ 64-bit`.
 <img width="594" height="166" alt="files" src="https://github.com/user-attachments/assets/bba3c3e9-84a0-407d-8279-a159653e2e4a" />
 
 ## Version
-- Current version: 1.7.0
+- Current version: 1.7.2
 
 ## Software's User interface
 When you open the software, you are going to see this interface:
@@ -116,8 +116,10 @@ When you open the web-application, you are going to encounter this interface:
 | 21 | **Server Outputs** | Displays real-time server logs and output messages. |
 
 ## Additional notes
-- This software requires NodeJs installed on your device in order to work, you can install it from the artificial NodeJs website, or you can run the `node-v22.11.0-x64.msi` file to install it directly. 
-- The server can run in the background without a noticeable effect on your device's resources, and does not stop if you closed the program, to stop it, stop it from the program's interface.
+- The server uses HTTP protocol.
+- This software requires NodeJs installed on your device in order to work, you can install it from the artificial NodeJs website, or you can run the `node-v22.11.0-x64.msi` program to install it directly 'version 22.11.0'.
+- The server can run in the background without a noticeable effect on your device's resources, and does not stop if you close the program, to stop it, stop it from the program's interface when you want.
+- If your computer is not connected to a local network, the server will run but will be only accessible from the computer. If your computer is connected to a local network (you will see on the program interface somthing like 'The server is running at: http://127.0.0.1:3000/ or http://localhost/'), the server will run and other devices connected to the same local network will be able to access it, (you will see on the program interface somthing like 'The server is running at: http://192.168.1.2:3000/ or http://localhost/').
 - Do NOT modify anything in the program files to avoid unexpected errors.
 
 - Developed by Ayman Saied -

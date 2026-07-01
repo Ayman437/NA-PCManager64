@@ -18,6 +18,8 @@ import json
 
 isOpeningOutputs = False
 
+# This code may only be for Windows
+
 def getLocalIp():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -28,7 +30,7 @@ def getLocalIp():
         return local_ip
     except Exception as e:
         print(e)
-        return "IP not found!"
+        return socket.gethostbyname("localhost")
 
 
 configurationJsonFilePath = "Server/Configuration.json"
@@ -41,7 +43,20 @@ try:
 except Exception as e:
     print(e)
 
+
 ip = getLocalIp()
+
+
+def updateIp():
+    global ip
+
+    while True:
+        time.sleep(10)
+        ip = getLocalIp()
+
+
+threading.Thread(target=updateIp).start()
+
 
 def getServerStats():
     global serverStatusVar
@@ -58,10 +73,11 @@ def getServerStats():
     stl.set("Getting server status...")
     stLbl.config(fg="black")
 
-    try:
-        with open(configurationJsonFilePath, 'r', encoding='utf-8') as file:
-            data = json.load(file)
+    with open(configurationJsonFilePath, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    file.close()
 
+    try:
         response = requests.get(f"http://{ip}:{data.get('PORT')}/health-check")
         if response:
             serverStatusVar.set(f"  The server is online\n  The server is running at: http://{ip}:{data.get('PORT')}/ or http://localhost:{data.get('PORT')}/")
@@ -75,9 +91,6 @@ def getServerStats():
             serverImgQuEntry.config(state=DISABLED)
             startRunBtn.config(state=DISABLED)
             saveChangesBtn.config(state=DISABLED)
-
-        file.close()
-
     except RequestException:
         serverStatusVar.set("  The server is offline")
         serverStatusLbl.config(fg="red")
@@ -188,44 +201,58 @@ def startServer():
     serverImgQuEntry.config(state=DISABLED)
     startRunBtn.config(state=DISABLED)
 
-    with open(configurationJsonFilePath, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    file.close()
-
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        isPort = s.connect_ex(((ip), data.get('PORT'))) != 0
-
-    if isPort == True:
+    try:
         with open(configurationJsonFilePath, 'r', encoding='utf-8') as file:
             data = json.load(file)
-
         file.close()
-        if not os.path.exists(data.get("OtherServerRunnerScriptPath2")):
-            messagebox.showwarning("Missing file/folder error", "The StartPCManagerJSServer2.vbs file is missing, the program will be closed now!")
-            root.destroy()
-            try:
-                sys.exit()
-            except SystemExit:
-                os._exit(0)
 
-        try:
-            entr1.config(state=NORMAL)
-            entr1.delete("1.0", "end")
-            entr1.config(state=DISABLED)
-        except Exception:
-            pass
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            errCode = s.connect_ex(((ip), data.get('PORT')))
+            print(ip)
+            isPort = errCode != 0
+            print(errCode)
 
-        subprocess.run([data.get("OtherServerRunnerScriptPath2")], shell=True)
-        threading.Thread(target=getServerStats).start()
-    else:
-        stl.set("Cannot use this port")
+        if isPort == True:
+            with open(configurationJsonFilePath, 'r', encoding='utf-8') as file:
+                data = json.load(file)
+            file.close()
+
+            subprocess.run([data.get("OtherServerRunnerScriptPath2")], shell=True)
+            threading.Thread(target=getServerStats).start()
+        else:
+            stl.set("Cannot use this port")
+            stLbl.config(fg="red")
+            messagebox.showwarning("Invalid inputs", f"Port {str(serverPortIntVar.get())} is already in use, please choose a different port number.")
+            StartServerBtn.config(state=NORMAL)
+            serverPortEntry.config(state=NORMAL)
+            serverPassEntry.config(state=NORMAL)
+            serverImgQuEntry.config(state=NORMAL)
+            startRunBtn.config(state=NORMAL)
+    except Exception as e:
+        print(e)
+        stl.set("Error!")
         stLbl.config(fg="red")
-        messagebox.showwarning("Invalid inputs", f"Port {str(serverPortIntVar.get())} is already in use, please choose a different port number")
+
         StartServerBtn.config(state=NORMAL)
         serverPortEntry.config(state=NORMAL)
         serverPassEntry.config(state=NORMAL)
         serverImgQuEntry.config(state=NORMAL)
         startRunBtn.config(state=NORMAL)
+
+    if not os.path.exists(data.get("OtherServerRunnerScriptPath2")):
+        messagebox.showwarning("Missing file/folder error", "The StartPCManagerJSServer2.vbs file is missing, the program will be closed now!")
+        root.destroy()
+        try:
+            sys.exit()
+        except SystemExit:
+            os._exit(0)
+
+    try:
+        entr1.config(state=NORMAL)
+        entr1.delete("1.0", "end")
+        entr1.config(state=DISABLED)
+    except Exception:
+        pass
 
 def startServerThread():
     threading.Thread(target=startServer).start()
@@ -350,7 +377,7 @@ def saveChanges():
                         else:
                             stl.set("Cannot save changes")
                             stLbl.config(fg="red")
-                            messagebox.showwarning("Invalid inputs", "Please enter a server images quality value between 0 and 1")
+                            messagebox.showwarning("Invalid inputs", "Please enter a server images quality value between 0 and 1.")
                             stopServerBtn.config(state=DISABLED)
                             openWebsiteBtn.config(state=DISABLED)
                             StartServerBtn.config(state=NORMAL)
@@ -362,7 +389,7 @@ def saveChanges():
                     else:
                         stl.set("Cannot save changes")
                         stLbl.config(fg="red")
-                        messagebox.showwarning("Invalid inputs", "Please enter a valid server images quality value")
+                        messagebox.showwarning("Invalid inputs", "Please enter a valid server images quality value.")
                         stopServerBtn.config(state=DISABLED)
                         openWebsiteBtn.config(state=DISABLED)
                         StartServerBtn.config(state=NORMAL)
@@ -374,7 +401,7 @@ def saveChanges():
                 else:
                     stl.set("Cannot save changes")
                     stLbl.config(fg="red")
-                    messagebox.showwarning("Invalid inputs", "Please enter a valid server access key")
+                    messagebox.showwarning("Invalid inputs", "Please enter a valid server access key.")
                     stopServerBtn.config(state=DISABLED)
                     openWebsiteBtn.config(state=DISABLED)
                     StartServerBtn.config(state=NORMAL)
@@ -386,7 +413,7 @@ def saveChanges():
             else:
                 stl.set("Cannot save changes")
                 stLbl.config(fg="red")
-                messagebox.showwarning("Invalid inputs", f"Port {str(serverPortIntVar.get())} is already in use, please choose a different port number")
+                messagebox.showwarning("Invalid inputs", f"Port {str(serverPortIntVar.get())} is already in use, please choose a different port number.")
                 stopServerBtn.config(state=DISABLED)
                 openWebsiteBtn.config(state=DISABLED)
                 StartServerBtn.config(state=NORMAL)
@@ -398,7 +425,7 @@ def saveChanges():
         else:
             stl.set("Cannot save changes")
             stLbl.config(fg="red")
-            messagebox.showwarning("Invalid inputs", "Please enter a port value between 1 and 65535")
+            messagebox.showwarning("Invalid inputs", "Please enter a port value between 1 and 65535.")
             stopServerBtn.config(state=DISABLED)
             openWebsiteBtn.config(state=DISABLED)
             StartServerBtn.config(state=NORMAL)
@@ -411,7 +438,7 @@ def saveChanges():
     else:
         stl.set("Cannot save changes")
         stLbl.config(fg="red")
-        messagebox.showwarning("Invalid inputs", "Please enter a valid port value")
+        messagebox.showwarning("Invalid inputs", "Please enter a valid port value.")
         stopServerBtn.config(state=DISABLED)
         openWebsiteBtn.config(state=DISABLED)
         StartServerBtn.config(state=NORMAL)
@@ -710,7 +737,7 @@ def checkNodeJs():
     nodeCommandResult = subprocess.run(['node', '--version'], shell=True, timeout=10)
 
     if nodeCommandResult.returncode != 0:
-        messagebox.showwarning("Requirements error", "This program requires NodeJs installed on your device in order to work properly")
+        messagebox.showwarning("Requirements error", "This program requires NodeJs installed on your device in order to work properly.")
         root.destroy()
         try:
             sys.exit()

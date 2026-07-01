@@ -29,7 +29,7 @@ function clearShotsAndTempFiles(){
         if (path.extname(file) === ".png" && path.basename(file, '.png').length == 8) {
             let filepath = path.join(screenshotLastShotFullPath, file);
 
-            // Be carefull here
+            // Be careful here
             fs.unlinkSync(filepath);
 
             console.log("Removing " + path.basename(file) + "...");
@@ -40,7 +40,7 @@ function clearShotsAndTempFiles(){
         if (path.basename(file) === "RPCError82737257.vbs" ) {
             let filepath = path.join(__dirname + "/", file);
 
-            // Be carefull here
+            // Be careful here
             fs.unlinkSync(filepath);
 
             console.log("Removing " + path.basename(file) + "...");
@@ -559,8 +559,8 @@ function startServer(){
         let key = req.url.split("-")[1]
         if (key == accessKey){
             res.writeHead(200, { "Content-Type": "text/html; charest=utf-8" });
-            res.end("<h1>Shutdownninig PC...</h1>");
-            console.log("Shutdownninig PC...");
+            res.end("<h1>Shutdown PC...</h1>");
+            console.log("Shutdown PC...");
 
             server.close();
             shutdown();
@@ -623,7 +623,7 @@ function startServer(){
     } else if (req.url.startsWith("/shutdownserver")){
         let key = req.url.split("-")[1]
         if (key == accessKey){
-            res.end("Shutdowning server...");
+            res.end("Shutdown server...");
             process.exit(0);
         } else {
             res.writeHead(200, { "Content-Type": "text/html; charest=utf-8" });

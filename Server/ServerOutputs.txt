@@ -1,1 +1,16 @@
-17:22:21 The server is running at: http://192.168.1.6:3000 or http://localhost:3000
+17:19:02 The server is running at: http://IP not found!:3000 or http://localhost:3000
+17:19:39 +1 New visit...
+17:19:39 Requesting PC Username...
+17:19:39 Running: systeminfo
+17:19:39 Running: driverquery /v
+17:19:39 Running: wmic cpu list full
+17:19:39 Running: wmic path win32_videocontroller get /format:list
+17:19:39 Running: wmic logicaldisk list full
+17:19:39 Getting data...
+17:19:39 Running: dir \
+17:19:39 Command sent successfully
+17:19:39 Command sent successfully
+17:19:39 Command sent successfully
+17:19:40 Command sent successfully
+17:19:43 Command sent successfully
+17:19:53 Command sent successfully
