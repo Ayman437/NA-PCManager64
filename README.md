@@ -85,7 +85,7 @@ When you open the web-application, you are going to encounter this interface:
 
 <img width="960" height="414" alt="web interface3" src="https://github.com/user-attachments/assets/1dd4de42-753e-45cf-a551-92cc71d39c13" />
 
-<img width="958" height="362" alt="webinterface1" src="https://github.com/user-attachments/assets/a75cf69b-6981-4bd8-8e32-1f37be187c3b" />
+<img width="958" height="362" alt="webinterface1" src="https://github.com/user-attachments/assets/ac0a15d8-1d07-41cc-b910-884a528c7994" />
 
 - First thing you see when you open the web-application is an entry that asks you for the server access key, you need to enter the right access key in order to continue.
 - Then - if you entered the right access key - you will see a bunch of boxes, every box has its own function, you will see also your PC's username at the top.
