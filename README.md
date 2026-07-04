@@ -38,7 +38,7 @@ NA-PCManager64/
 └── README.md                         # Project documentation
 ```
 
-## Instructions for normal user
+## Instructions for Normal User
 
 To download the software, download the `exe_program.rar` file and extract it
 <br>
@@ -51,7 +51,7 @@ Note that this works for `Windows 10+ 64-bit`.
 ## Version
 - Current version: 1.7.2
 
-## Software's User interface
+## Software's User Interface
 When you open the software, you are going to see this interface:
 
 <img width="542" height="260" alt="serverclosed" src="https://github.com/user-attachments/assets/e94602fc-8c18-4646-b0b3-93d575355feb" />
@@ -78,7 +78,7 @@ When you open the software, you are going to see this interface:
 
 - Then, in the bottom section, There is a status text label that tells you what is happening right now in terms of fetching server status or saving changes, etc.
 
-## Web-Application's user interface
+## Web-Application's User Interface
 When you open the web-application, you are going to encounter this interface:
 
 <img width="960" height="282" alt="webinterface2" src="https://github.com/user-attachments/assets/a6196ac1-58ee-4a86-9955-84577e5e2dac" />
@@ -115,7 +115,7 @@ When you open the web-application, you are going to encounter this interface:
 | 20 | **File Explorer** | Allows browsing of files and folders and viewing their paths. |
 | 21 | **Server Outputs** | Displays real-time server logs and output messages. |
 
-## Additional notes
+## Additional Notes
 - The server uses HTTP protocol.
 - This software requires NodeJs installed on your device in order to work, you can install it from the artificial NodeJs website, or you can run the `node-v22.11.0-x64.msi` program to install it directly 'version 22.11.0'.
 - The server can run in the background without a noticeable effect on your device's resources, and does not stop if you close the program, to stop it, stop it from the program's interface when you want.
@@ -125,7 +125,7 @@ When you open the web-application, you are going to encounter this interface:
 - Developed by Ayman Saied -
 - Please contact me [ clulyf88@gmail.com ] if you face any problem with the program, so I can fix it -
 
-## Some information for developers on GitHub
+## Some Information for Developers on GitHub
 - This project is written in `NodeJs` 'for the server', `VBS` 'for starting server command',  `Python` 'for the program', `Javascript` 'for handling web-application interactions and sending data', `HTML` 'for main web-application interface', `CSS` 'for web-application user interface styling'.
 - This project uses **NirCmd command-line utility by NirSoft**.
 - Libraries used in Python:
